@@ -8,17 +8,33 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
  
+<!-- Using value element -->
  <bean class="com.springcore.Student" name="student1">
  	<property name="studentId">
- 		<value>2234</value>
+ 		<value>2233</value>
  	</property>
  	
  	<property name="studentName">
- 		<value>Supreet Singh</value>
+ 		<value>Sukhpreet Singh</value>
  	</property>
  	
  	<property name="studentAddress">
- 		<value>Indore</value>
+ 		<value>Gwalior</value>
  	</property>
  </bean>
+
+<!-- Using value attribute -->
+ <bean class="com.springcore.Student" name="student2">
+ 	<property name="studentId" value="2234" />
+ 	
+ 	<property name="studentName" value="Supreet Singh" />
+ 	
+ 	<property name="studentAddress" value="Indore" />
+
+ </bean>
+
+<!-- Using pschema -->
+ <bean class="com.springcore.Student" name="student3" p:studentId="2235" p:studentName="Jaspreet Singh" p:studentAddress="Bhopal" />
+
+
 </beans>

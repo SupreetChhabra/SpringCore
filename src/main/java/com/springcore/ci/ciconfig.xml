@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Using value element -->
+	<bean class="com.springcore.ci.Certi" name="cer">
+		<constructor-arg value="This is Certificate" />
+	</bean>
+
+	<bean class="com.springcore.ci.Person" name="p1">
+		<constructor-arg value="Supreet" />
+		<constructor-arg value="12" />
+		<constructor-arg ref="cer" />
+	</bean>
+
+	<!-- Using c schema -->
+	<bean class="com.springcore.ci.Certi" name="cer2"
+		c:name="Java Programming language" />
+
+	<bean class="com.springcore.ci.Person" name="p2">
+		<constructor-arg value="Jaspreet" />
+		<constructor-arg value="15" />
+		<constructor-arg ref="cer2" />
+	</bean>
+
+	<bean class="com.springcore.ci.Person" name="p3">
+		<constructor-arg value="Jaspreet" />
+		<constructor-arg value="15" />
+		<constructor-arg ref="cer2" />
+		<constructor-arg>
+			<list>
+				<value>999999</value>
+				<value>888888</value>
+				<value>777777</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
